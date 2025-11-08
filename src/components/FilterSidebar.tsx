@@ -5,12 +5,12 @@ import { Slider } from "@/components/ui/slider";
 import { SlidersHorizontal } from "lucide-react";
 
 const categories = [
-  "Character Design",
+  "Diseño de Personajes",
   "Fan Art", 
-  "Logo Design",
-  "Landscape",
-  "Abstract",
-  "Comic Style",
+  "Diseño de Logos",
+  "Paisajes",
+  "Abstracto",
+  "Estilo Cómic",
 ];
 
 interface FilterSidebarProps {
@@ -30,12 +30,12 @@ const FilterSidebar = ({
     <aside className="w-full lg:w-64 space-y-6">
       <div className="flex items-center gap-2 mb-4">
         <SlidersHorizontal className="h-5 w-5 text-primary" />
-        <h2 className="text-xl font-bold text-foreground">Filters</h2>
+        <h2 className="text-xl font-bold text-foreground">Filtros</h2>
       </div>
 
       {/* Categories */}
       <div className="space-y-4">
-        <h3 className="font-semibold text-foreground">Categories</h3>
+        <h3 className="font-semibold text-foreground">Categorías</h3>
         <div className="space-y-3">
           {categories.map((category) => (
             <div key={category} className="flex items-center space-x-2">
@@ -57,7 +57,7 @@ const FilterSidebar = ({
 
       {/* Price Range */}
       <div className="space-y-4">
-        <h3 className="font-semibold text-foreground">Price Range</h3>
+        <h3 className="font-semibold text-foreground">Rango de Precio</h3>
         <div className="px-2">
           <Slider
             value={priceRange}
@@ -81,7 +81,7 @@ const FilterSidebar = ({
           onPriceChange([0, 200]);
         }}
       >
-        Reset Filters
+        Restablecer Filtros
       </Button>
     </aside>
   );

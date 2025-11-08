@@ -23,8 +23,8 @@ const CustomLogoCTA = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Request Submitted!",
-      description: "We'll contact you soon with your custom logo design.",
+      title: "¡Solicitud Enviada!",
+      description: "Pronto nos pondremos en contacto contigo con tu diseño de logo personalizado.",
     });
     setOpen(false);
     setFormData({
@@ -45,13 +45,13 @@ const CustomLogoCTA = () => {
             <div className="flex-1 text-center md:text-left">
               <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-4">
                 <Sparkles className="h-5 w-5 text-primary" />
-                <span className="text-sm font-semibold text-primary">Custom Design Service</span>
+                <span className="text-sm font-semibold text-primary">Servicio de Diseño Personalizado</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-card-foreground">
-                Need a Custom Logo?
+                ¿Necesitas un Logo Personalizado?
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Work directly with our talented artists to create a unique logo that perfectly represents your brand
+                Trabaja directamente con nuestros artistas talentosos para crear un logo único que represente perfectamente tu marca
               </p>
             </div>
             
@@ -59,99 +59,99 @@ const CustomLogoCTA = () => {
               <DialogTrigger asChild>
                 <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-lg px-8">
                   <Palette className="mr-2 h-5 w-5" />
-                  Get Started
+                  Comenzar
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl">Custom Logo Request</DialogTitle>
+                  <DialogTitle className="text-2xl">Solicitud de Logo Personalizado</DialogTitle>
                   <DialogDescription>
-                    Tell us about your vision and we'll create something amazing
+                    Cuéntanos sobre tu visión y crearemos algo increíble
                   </DialogDescription>
                 </DialogHeader>
                 
                 <form onSubmit={handleSubmit} className="space-y-6 mt-4">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Your Name *</Label>
+                      <Label htmlFor="name">Tu Nombre *</Label>
                       <Input 
                         id="name"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        placeholder="John Doe"
+                        placeholder="Juan Pérez"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email *</Label>
+                      <Label htmlFor="email">Correo Electrónico *</Label>
                       <Input 
                         id="email"
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        placeholder="john@example.com"
+                        placeholder="juan@ejemplo.com"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="businessType">Business/Project Type *</Label>
+                    <Label htmlFor="businessType">Tipo de Negocio/Proyecto *</Label>
                     <Input 
                       id="businessType"
                       required
                       value={formData.businessType}
                       onChange={(e) => setFormData({...formData, businessType: e.target.value})}
-                      placeholder="e.g., Tech Startup, Coffee Shop, Gaming Channel"
+                      placeholder="ej., Startup Tecnológica, Cafetería, Canal de Gaming"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="style">Preferred Style *</Label>
+                    <Label htmlFor="style">Estilo Preferido *</Label>
                     <Select 
                       value={formData.style}
                       onValueChange={(value) => setFormData({...formData, style: value})}
                       required
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Select a style" />
+                        <SelectValue placeholder="Selecciona un estilo" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="minimalist">Minimalist</SelectItem>
-                        <SelectItem value="modern">Modern</SelectItem>
+                        <SelectItem value="minimalist">Minimalista</SelectItem>
+                        <SelectItem value="modern">Moderno</SelectItem>
                         <SelectItem value="vintage">Vintage</SelectItem>
-                        <SelectItem value="playful">Playful</SelectItem>
-                        <SelectItem value="elegant">Elegant</SelectItem>
-                        <SelectItem value="bold">Bold & Colorful</SelectItem>
+                        <SelectItem value="playful">Divertido</SelectItem>
+                        <SelectItem value="elegant">Elegante</SelectItem>
+                        <SelectItem value="bold">Audaz y Colorido</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="colors">Preferred Colors</Label>
+                    <Label htmlFor="colors">Colores Preferidos</Label>
                     <Input 
                       id="colors"
                       value={formData.colors}
                       onChange={(e) => setFormData({...formData, colors: e.target.value})}
-                      placeholder="e.g., Blue and Gold, Pastel Pink, Dark Theme"
+                      placeholder="ej., Azul y Dorado, Rosa Pastel, Tema Oscuro"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="description">Project Description *</Label>
+                    <Label htmlFor="description">Descripción del Proyecto *</Label>
                     <Textarea 
                       id="description"
                       required
                       value={formData.description}
                       onChange={(e) => setFormData({...formData, description: e.target.value})}
-                      placeholder="Tell us about your project, what you want to convey, target audience, etc."
+                      placeholder="Cuéntanos sobre tu proyecto, qué quieres transmitir, público objetivo, etc."
                       rows={4}
                     />
                   </div>
 
                   <Button type="submit" className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
-                    Submit Request
+                    Enviar Solicitud
                   </Button>
                 </form>
               </DialogContent>

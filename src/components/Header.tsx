@@ -1,8 +1,17 @@
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import CartSheet, { CartItem } from "./CartSheet";
 
-const Header = () => {
+interface HeaderProps {
+  cartItems: CartItem[];
+  onUpdateQuantity: (id: number, quantity: number) => void;
+  onRemoveItem: (id: number) => void;
+}
+
+const Header = ({ cartItems, onUpdateQuantity, onRemoveItem }: HeaderProps) => {
+  const itemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
@@ -10,34 +19,34 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary via-secondary to-accent" />
           <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            ArtMarket
+            Drawing Lifes
           </span>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           <a href="#gallery" className="text-foreground hover:text-primary transition-colors font-medium">
-            Gallery
+            Galería
           </a>
           <a href="#categories" className="text-foreground hover:text-primary transition-colors font-medium">
-            Categories
+            Categorías
           </a>
           <a href="#custom" className="text-foreground hover:text-primary transition-colors font-medium">
-            Custom Logo
+            Logo Personalizado
           </a>
           <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
-            About
+            Acerca de
           </a>
         </nav>
 
         {/* Cart Button */}
         <div className="flex items-center gap-4">
-          <Button variant="outline" size="icon" className="relative">
-            <ShoppingCart className="h-5 w-5" />
-            <span className="absolute -top-1 -right-1 bg-secondary text-secondary-foreground text-xs w-5 h-5 rounded-full flex items-center justify-center font-semibold">
-              0
-            </span>
-          </Button>
+          <CartSheet 
+            items={cartItems}
+            onUpdateQuantity={onUpdateQuantity}
+            onRemoveItem={onRemoveItem}
+            itemCount={itemCount}
+          />
 
           {/* Mobile Menu */}
           <Sheet>
@@ -49,16 +58,16 @@ const Header = () => {
             <SheetContent>
               <nav className="flex flex-col gap-6 mt-8">
                 <a href="#gallery" className="text-lg font-medium text-foreground hover:text-primary transition-colors">
-                  Gallery
+                  Galería
                 </a>
                 <a href="#categories" className="text-lg font-medium text-foreground hover:text-primary transition-colors">
-                  Categories
+                  Categorías
                 </a>
                 <a href="#custom" className="text-lg font-medium text-foreground hover:text-primary transition-colors">
-                  Custom Logo
+                  Logo Personalizado
                 </a>
                 <a href="#about" className="text-lg font-medium text-foreground hover:text-primary transition-colors">
-                  About
+                  Acerca de
                 </a>
               </nav>
             </SheetContent>
@@ -70,3 +79,4 @@ const Header = () => {
 };
 
 export default Header;
+

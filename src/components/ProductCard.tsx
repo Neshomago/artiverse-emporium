@@ -10,9 +10,10 @@ interface ProductCardProps {
   price: number;
   image: string;
   category: string;
+  onAddToCart: (product: ProductCardProps) => void;
 }
 
-const ProductCard = ({ title, artist, price, image, category }: ProductCardProps) => {
+const ProductCard = ({ id, title, artist, price, image, category, onAddToCart }: ProductCardProps) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   return (
@@ -44,9 +45,12 @@ const ProductCard = ({ title, artist, price, image, category }: ProductCardProps
 
         {/* Quick Add Button */}
         <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-          <Button className="w-full bg-primary hover:bg-primary/90">
+          <Button 
+            className="w-full bg-primary hover:bg-primary/90"
+            onClick={() => onAddToCart({ id, title, artist, price, image, category, onAddToCart })}
+          >
             <ShoppingCart className="mr-2 h-4 w-4" />
-            Add to Cart
+            Añadir al Carrito
           </Button>
         </div>
       </div>
