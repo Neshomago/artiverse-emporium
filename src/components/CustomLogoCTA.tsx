@@ -39,7 +39,7 @@ const CustomLogoCTA = () => {
 
   return (
     <section className="my-20 px-6">
-      <div className="max-w-6xl mx-auto bg-gradient-to-r from-primary via-secondary to-accent p-1 rounded-2xl shadow-[var(--shadow-soft)]">
+      <div className="max-w-6xl mx-auto bg-gradient-to-r from-accent via-secondary to-accent p-1 rounded-2xl shadow-[var(--shadow-soft)]">
         <div className="bg-card rounded-2xl p-8 md:p-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex-1 text-center md:text-left">
@@ -57,7 +57,7 @@ const CustomLogoCTA = () => {
             
             <Dialog open={open} onOpenChange={setOpen}>
               <DialogTrigger asChild>
-                <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-lg px-8">
+                <Button size="lg" className="bg-gradient-to-r from-accent to-secondary hover:opacity-90 transition-opacity text-lg px-8">
                   <Palette className="mr-2 h-5 w-5" />
                   Comenzar
                 </Button>
@@ -150,7 +150,7 @@ const CustomLogoCTA = () => {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
+                  <Button type="submit" className="w-full bg-gradient-to-r from-accent to-secondary hover:opacity-90 transition-opacity">
                     Enviar Solicitud
                   </Button>
                 </form>

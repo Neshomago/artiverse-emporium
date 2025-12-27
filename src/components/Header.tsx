@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import CartSheet, { CartItem } from "./CartSheet";
 
+import logo from "@/assets/logo.jpg";
+import slogan from "@/assets/2.png";
+
 interface HeaderProps {
   cartItems: CartItem[];
   onUpdateQuantity: (id: number, quantity: number) => void;
@@ -17,10 +20,9 @@ const Header = ({ cartItems, onUpdateQuantity, onRemoveItem }: HeaderProps) => {
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary via-secondary to-accent" />
-          <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Drawing Lifes
-          </span>
+          <img src={logo} width={60} />
+          <img src={slogan} width={190} />
+          
         </div>
 
         {/* Desktop Navigation */}

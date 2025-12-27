@@ -28,7 +28,7 @@ const ProductCard = ({ id, title, artist, price, image, category, onAddToCart }:
         
         {/* Category Badge */}
         <div className="absolute top-3 left-3">
-          <span className="px-3 py-1 bg-primary/90 backdrop-blur-sm text-primary-foreground text-xs font-semibold rounded-full">
+          <span className="px-3 py-1 bg-stone-900/80 backdrop-blur-sm text-white text-xs font-bold rounded-full">
             {category}
           </span>
         </div>
@@ -46,7 +46,7 @@ const ProductCard = ({ id, title, artist, price, image, category, onAddToCart }:
         {/* Quick Add Button */}
         <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
           <Button 
-            className="w-full bg-primary hover:bg-primary/90"
+            className="w-full bg-amber-500 hover:bg-amber-700/90"
             onClick={() => onAddToCart({ id, title, artist, price, image, category, onAddToCart })}
           >
             <ShoppingCart className="mr-2 h-4 w-4" />

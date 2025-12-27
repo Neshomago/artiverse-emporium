@@ -15,14 +15,16 @@ import sample3 from "@/assets/sample-3.jpg";
 import sample4 from "@/assets/sample-4.jpg";
 import sample5 from "@/assets/sample-5.jpg";
 import sample6 from "@/assets/sample-6.jpg";
+import logo from "@/assets/logo.jpg";
+import slogan from "@/assets/2.png";
 
 const products = [
-  { id: 1, title: "Chica Mágica Kawaii", artist: "SakuraArt", price: 45, image: sample1, category: "Diseño de Personajes" },
-  { id: 2, title: "Flujo Geométrico", artist: "ModernMinds", price: 35, image: sample2, category: "Diseño de Logos" },
-  { id: 3, title: "Paisaje de Ensueño", artist: "CloudNine", price: 65, image: sample3, category: "Paisajes" },
-  { id: 4, title: "Mascota Feliz", artist: "CuteCreations", price: 40, image: sample4, category: "Diseño de Personajes" },
-  { id: 5, title: "Retrato Anime", artist: "FanArtist99", price: 55, image: sample5, category: "Fan Art" },
-  { id: 6, title: "Héroe de Acción", artist: "ComicPro", price: 50, image: sample6, category: "Estilo Cómic" },
+  { id: 1, title: "Pokemon Charmander", artist: "SakuraArt", price: 45, image: sample1, category: "Fan Art" },
+  { id: 2, title: "Vector Spiderman", artist: "ModernMinds", price: 35, image: sample2, category: "Estilo Cómic" },
+  { id: 3, title: "Tom y Jerry", artist: "CloudNine", price: 65, image: sample3, category: "Paisajes" },
+  { id: 4, title: "Tom Feliz", artist: "CuteCreations", price: 40, image: sample4, category: "Diseño de Personajes" },
+  { id: 5, title: "Poster contra Bullying", artist: "FanArtist99", price: 55, image: sample5, category: "Fan Art" },
+  { id: 6, title: "Pokemon Mudkip", artist: "ComicPro", price: 50, image: sample6, category: "Abstracto" },
 ];
 
 const Index = () => {
@@ -129,10 +131,11 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary via-secondary to-accent" />
-                <span className="text-lg font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <img src={logo} width={60} />
+                <img src={slogan} width={190} />
+                {/* <span className="text-lg font-bold bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
                   Drawing Lifes
-                </span>
+                </span> */}
               </div>
               <p className="text-sm text-muted-foreground">
                 Tu destino para ilustraciones únicas y arte personalizado

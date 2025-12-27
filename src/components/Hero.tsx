@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import bgWave from "@/assets/bg.png";
 
 const Hero = () => {
   return (
@@ -8,21 +9,21 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
+        style={{ backgroundImage: `url(${bgWave})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/50" />
       </div>
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-accent via-secondary to-accent bg-clip-text text-transparent animate-in fade-in slide-in-from-bottom-4 duration-700">
           Descubre Arte Increíble
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-in fade-in slide-in-from-bottom-5 duration-700 delay-150">
           Explora ilustraciones únicas y fan art de creadores talentosos de todo el mundo
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300">
-          <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
+          <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-accent to-secondary hover:opacity-90 transition-opacity">
             <a href="#gallery">Ver Galería</a>
           </Button>
           <Button size="lg" variant="outline" className="text-lg px-8 border-2">
