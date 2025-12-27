@@ -15,6 +15,7 @@ import sample3 from "@/assets/sample-3.jpg";
 import sample4 from "@/assets/sample-4.jpg";
 import sample5 from "@/assets/sample-5.jpg";
 import sample6 from "@/assets/sample-6.jpg";
+import sample7 from "@/assets/sample-7.jpg";
 import logo from "@/assets/logo.jpg";
 import slogan from "@/assets/2.png";
 
@@ -25,6 +26,7 @@ const products = [
   { id: 4, title: "Tom Feliz", artist: "CuteCreations", price: 40, image: sample4, category: "Diseño de Personajes" },
   { id: 5, title: "Poster contra Bullying", artist: "FanArtist99", price: 55, image: sample5, category: "Fan Art" },
   { id: 6, title: "Pokemon Mudkip", artist: "ComicPro", price: 50, image: sample6, category: "Abstracto" },
+  { id: 7, title: "Pokemon Squirtle", artist: "ComicPro", price: 50, image: sample6, category: "Abstracto" },
 ];
 
 const Index = () => {
